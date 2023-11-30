@@ -1,0 +1,67 @@
+{% extends '../base/nav.html' %}
+
+{% block title %}
+   TRT Page
+{% endblock title %}
+
+{% block content %}
+    <div class="form-container">
+        <h1 style="text-align:center;">TRT Prediction Form</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="">Age</label>
+            <input type="number" name="age" class="input-elements">
+            <label for="">Sex</label>
+            <select name="sex" id="" class="input-elements">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+            <label for="">Chestpain Type</label>
+            <select name="cpt" id="" class="input-elements">
+                <option value="1">1 - Typical type</option>
+                <option value="2">2 - Typical type-angina</option>
+                <option value="3">3 - Non-angina type</option>
+                <option value="4">4 - Asymptomatic</option>
+            </select>
+            <label for="">TrestBps (Resting Blood pressure)</label>
+            <input type="number" name="trest_bps" class="input-elements">
+            <label for="">Serum Cholestrol</label>
+            <input type="number" name="chol" class="input-elements"/>
+            <label for="">Fasting Blood Sugar</label>
+            <input type="number" name="fbs" class="input-elements"/>
+            <label>RestECG - (Rested Electrographic results) </label>
+            <select name="rest-ecg" id="" class="input-elements">
+                <option value="0">0 - Normal</option>
+                <option value="1">1 - having ST-T wave abnormal</option>
+                <option value="2">2 - left ventricular hypertrophy</option>
+            </select>
+            <label>Thalach - Maximum heart rate achieved</label>
+            <input type="number" name="thalach" class="input-elements"/>
+            <label>Exang - Exercise induced agina</label>
+            <select name="exang" class="input-elements">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <label>Old Peak - ST depression induced by exercise relative to rest[0-5]</label>
+            <input type="text" name="old_peak" class="input-elements"/>
+            <label>Slope</label>
+            <select name="slope" class="input-elements">
+                <option value="0">0= unsloping</option>
+            	<option value="1">1= downslopping</option>
+            </select>
+            <label>ca => Number of major vessels colored by fluoroscopy(0-3)</label>
+            <input type="number" name="ca" class="input-elements"/>
+            <label>Thal - (Defect Type)</label>
+            <select name="thal" id="" class="input-elements">
+                <option value="1">1= normal</option>
+                <option value="2">2= fixed</option>
+            </select>
+            {% comment %} <label>Obesity</label>
+            <select name="obes" class="input-elements">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select> {% endcomment %}
+            <button type="submit">Get My Results</button>
+        </form>
+    </div>
+{% endblock content %}

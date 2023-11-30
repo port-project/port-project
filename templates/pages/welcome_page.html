@@ -1,0 +1,18 @@
+{% extends '../base/nav.html' %}
+
+{% block title %}
+  Welcome - Predict your Vessel Times
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+        <div class="inner">
+            <h4 style="text-align:center;" class="quote">
+              In the heart of every vessel lies 
+              the spirit of endless exploration.
+            </h4>
+            <a href="{% url 'trtPage' %}"><button>Predict TRT</button></a>
+            <a href="{% url 'dwellTime' %}"><button>Predict Dwell-Time</button></a>
+        </div>
+  </div>
+{% endblock content %}
